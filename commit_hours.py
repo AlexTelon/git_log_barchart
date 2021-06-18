@@ -54,10 +54,10 @@ count_column_width = max(len(str(largest_count)), len('count'))
 line_format = f"{{0:<5}}{{1:<{count_column_width}}} {{2}}"
 print(line_format.format('hour', 'count', 'commits'))
 
-for h in range(0, 25):
+for h in range(0, 24):
     count = len(commit_hours[h])
-    if count == 0:
-        continue
+    # if count == 0:
+    #     continue
     print(line_format.format(h, count, char_bar(count)))
 
 total_commits = sum(len(v) for k, v in commit_hours.items())
